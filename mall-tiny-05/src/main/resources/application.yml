@@ -1,0 +1,46 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: mall-tiny-05
+  datasource:
+    url: jdbc:mysql://localhost:3306/mall?characterEncoding=utf-8&serverTimezone=UTC
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: root
+#  redis:
+#    host: localhost
+#    password: 123456
+#    database: 0
+#    port: 6379
+#    timeout: 3000ms
+#    jedis:
+#      pool:
+#        max-active: 8
+#        max-idle: 8
+#        max-wait: -1ms
+#        min-idle: 0
+mybatis:
+  mapper-locations:
+    - classpath*:com/**/mapper/*.xml
+    - classpath:mapper/*.xml
+
+redis:
+    key:
+      prefix:
+        authCode: "portal:authCode:"
+      expired:
+        authCode: 120
+logging:
+  level:
+    com.yqz.pth: debug
+  file:
+    path: E:/idea-workspace/log
+
+jwt:
+  tokenHeader: Authorization
+  tokenHead: Bearer
+  secret: mySecret
+  expiration: 86400
+

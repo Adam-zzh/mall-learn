@@ -1,0 +1,19 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: mall-tinty-02
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/mall?characterEncoding=utf-8&serverTimezone=UTC
+    username: root
+    password: root
+mybatis:
+  mapper-locations:
+    - classpath:mapper/*.xml
+    - classpath*:com/**/mapper/*.xml
+logging:
+  level:
+    com.yqz.pth: debug
+  file:
+    path: E:/idea-workspace/log

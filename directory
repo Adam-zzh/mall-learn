@@ -1,0 +1,9 @@
+mall-tiny-01  mall整合SpringBoot+MyBatis搭建基本骨架
+mall-tiny-02  mall整合Swagger-UI实现在线API文档
+mall-tiny-03  mall整合Redis实现缓存功能
+mall-tiny-04  mall整合SpringSecurity和JWT实现认证和授权
+mall-tiny-05  mall整合SpringTask实现定时任务
+mall-tiny-06  实现excel导出功能
+mall-tiny-07  mall整合Elasticsearch实现商品搜索
+mall-tiny-08
+mall-tiny-09

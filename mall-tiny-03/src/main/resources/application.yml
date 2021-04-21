@@ -1,0 +1,40 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: mall-tinty-02
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/mall?characterEncoding=utf-8&serverTimezone=UTC
+    username: root
+    password: root
+  redis:
+    host: localhost
+    port: 6379
+    password: 123456
+    database: 0
+    jedis:
+      pool:
+        max-active: 8
+        max-idle: 8
+        max-wait: -1ms
+        min-idle: 0
+    timeout: 3000ms
+
+mybatis:
+  mapper-locations:
+    - classpath:mapper/*.xml
+    - classpath*:com/**/mapper/*.xml
+logging:
+  level:
+    com.yqz.pth: debug
+  file:
+    path: E:/idea-workspace/log
+
+#\u81EA\u5B9A\u4E49\u5C5E\u6027
+redis:
+  key:
+    prefix:
+      authCode: "portal:authCode:"
+    expired:
+      authCode: 120 #\u9A8C\u8BC1\u7801\u8D85\u671F\u65F6\u95F4

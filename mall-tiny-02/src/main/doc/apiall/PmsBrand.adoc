@@ -1,0 +1,475 @@
+= SwaggerUI演示
+
+
+[[_overview]]
+== Overview
+mall-tiny
+
+
+=== Version information
+[%hardbreaks]
+__Version__ : 1.0
+
+
+=== Contact information
+[%hardbreaks]
+__Contact__ : macro
+
+
+=== URI scheme
+[%hardbreaks]
+__Host__ : localhost:8080
+__BasePath__ : /
+
+
+=== Tags
+
+* PmsBrandController : 商品品牌管理
+
+
+
+
+[[_paths]]
+== Resources
+
+[[_pmsbrandcontroller_resource]]
+=== PmsBrandController
+商品品牌管理
+
+
+[[_addbrandusingpost]]
+==== 添加品牌
+....
+POST /brand/brand
+....
+
+
+===== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**bigPic** +
+__optional__|专区大图|string
+|**Query**|**brandStory** +
+__optional__|品牌故事|string
+|**Query**|**factoryStatus** +
+__optional__|是否为品牌制造商：0-&gt;不是；1-&gt;是|integer (int32)
+|**Query**|**firstLetter** +
+__optional__|首字母|string
+|**Query**|**id** +
+__optional__||integer (int64)
+|**Query**|**logo** +
+__optional__|品牌logo|string
+|**Query**|**name** +
+__optional__||string
+|**Query**|**productCommentCount** +
+__optional__|产品评论数量|integer (int32)
+|**Query**|**productCount** +
+__optional__|产品数量|integer (int32)
+|**Query**|**showStatus** +
+__optional__||integer (int32)
+|**Query**|**sort** +
+__optional__||integer (int32)
+|===
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_commonresult,CommonResult>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+===== Consumes
+
+* `application/json`
+
+
+===== Produces
+
+* `*/*`
+
+
+[[_getbrandbyidusingget]]
+==== 获取指定id的品牌信息
+....
+GET /brand/brand/{id}
+....
+
+
+===== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Path**|**id** +
+__required__|id|integer (int64)
+|===
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_22a3b6016b7de8c9dc7a94e6e06ed914,CommonResult«PmsBrand»>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+===== Consumes
+
+* `application/json`
+
+
+===== Produces
+
+* `*/*`
+
+
+[[_updatebrandusingput]]
+==== 更新指定id品牌信息
+....
+PUT /brand/brand/{id}
+....
+
+
+===== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Path**|**id** +
+__required__|id|integer (int64)
+|**Query**|**bigPic** +
+__optional__|专区大图|string
+|**Query**|**brandStory** +
+__optional__|品牌故事|string
+|**Query**|**factoryStatus** +
+__optional__|是否为品牌制造商：0-&gt;不是；1-&gt;是|integer (int32)
+|**Query**|**firstLetter** +
+__optional__|首字母|string
+|**Query**|**id** +
+__optional__||integer (int64)
+|**Query**|**logo** +
+__optional__|品牌logo|string
+|**Query**|**name** +
+__optional__||string
+|**Query**|**productCommentCount** +
+__optional__|产品评论数量|integer (int32)
+|**Query**|**productCount** +
+__optional__|产品数量|integer (int32)
+|**Query**|**showStatus** +
+__optional__||integer (int32)
+|**Query**|**sort** +
+__optional__||integer (int32)
+|===
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_commonresult,CommonResult>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+===== Consumes
+
+* `application/json`
+
+
+===== Produces
+
+* `*/*`
+
+
+[[_delbrandusingdelete]]
+==== 删除指定id品牌信息
+....
+DELETE /brand/brand/{id}
+....
+
+
+===== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Path**|**id** +
+__required__|id|integer (int64)
+|===
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_commonresult,CommonResult>>
+|**204**|No Content|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|===
+
+
+===== Consumes
+
+* `application/json`
+
+
+===== Produces
+
+* `*/*`
+
+
+[[_brandsusingget]]
+==== 获取所有品牌列表
+....
+GET /brand/brands
+....
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_d5036956cef02ec9110c84d6c52810ba,CommonResult«List«PmsBrand»»>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+===== Consumes
+
+* `application/json`
+
+
+===== Produces
+
+* `*/*`
+
+
+[[_querybrandsbypaginitionusingget]]
+==== 分页查询品牌商品信息
+....
+GET /brand/queryBrandsByPaginition
+....
+
+
+===== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4,.^2"]
+|===
+|Type|Name|Description|Schema|Default
+|**Query**|**bigPic** +
+__optional__|专区大图|string|
+|**Query**|**brandStory** +
+__optional__|品牌故事|string|
+|**Query**|**factoryStatus** +
+__optional__|是否为品牌制造商：0-&gt;不是；1-&gt;是|integer (int32)|
+|**Query**|**firstLetter** +
+__optional__|首字母|string|
+|**Query**|**id** +
+__optional__||integer (int64)|
+|**Query**|**logo** +
+__optional__|品牌logo|string|
+|**Query**|**name** +
+__optional__||string|
+|**Query**|**pagNo** +
+__optional__|pagNo|integer (int32)|`1`
+|**Query**|**pageSize** +
+__optional__|pageSize|integer (int32)|`3`
+|**Query**|**productCommentCount** +
+__optional__|产品评论数量|integer (int32)|
+|**Query**|**productCount** +
+__optional__|产品数量|integer (int32)|
+|**Query**|**showStatus** +
+__optional__||integer (int32)|
+|**Query**|**sort** +
+__optional__||integer (int32)|
+|===
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_d6d2dc69978acfcfcb5ab44f4a7e362f,CommonResult«PageInfo«PmsBrand»»>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+===== Consumes
+
+* `application/json`
+
+
+===== Produces
+
+* `*/*`
+
+
+
+
+[[_definitions]]
+== Definitions
+
+[[_commonresult]]
+=== CommonResult
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**code** +
+__optional__|integer (int64)
+|**data** +
+__optional__|object
+|**message** +
+__optional__|string
+|===
+
+
+[[_d5036956cef02ec9110c84d6c52810ba]]
+=== CommonResult«List«PmsBrand»»
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**code** +
+__optional__|integer (int64)
+|**data** +
+__optional__|< <<_pmsbrand,PmsBrand>> > array
+|**message** +
+__optional__|string
+|===
+
+
+[[_d6d2dc69978acfcfcb5ab44f4a7e362f]]
+=== CommonResult«PageInfo«PmsBrand»»
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**code** +
+__optional__|integer (int64)
+|**data** +
+__optional__|<<_56a61de333f6551e5061d02ffb516a5f,PageInfo«PmsBrand»>>
+|**message** +
+__optional__|string
+|===
+
+
+[[_22a3b6016b7de8c9dc7a94e6e06ed914]]
+=== CommonResult«PmsBrand»
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**code** +
+__optional__|integer (int64)
+|**data** +
+__optional__|<<_pmsbrand,PmsBrand>>
+|**message** +
+__optional__|string
+|===
+
+
+[[_56a61de333f6551e5061d02ffb516a5f]]
+=== PageInfo«PmsBrand»
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**endRow** +
+__optional__|integer (int32)
+|**hasNextPage** +
+__optional__|boolean
+|**hasPreviousPage** +
+__optional__|boolean
+|**isFirstPage** +
+__optional__|boolean
+|**isLastPage** +
+__optional__|boolean
+|**list** +
+__optional__|< <<_pmsbrand,PmsBrand>> > array
+|**navigateFirstPage** +
+__optional__|integer (int32)
+|**navigateLastPage** +
+__optional__|integer (int32)
+|**navigatePages** +
+__optional__|integer (int32)
+|**navigatepageNums** +
+__optional__|< integer (int32) > array
+|**nextPage** +
+__optional__|integer (int32)
+|**pageNum** +
+__optional__|integer (int32)
+|**pageSize** +
+__optional__|integer (int32)
+|**pages** +
+__optional__|integer (int32)
+|**prePage** +
+__optional__|integer (int32)
+|**size** +
+__optional__|integer (int32)
+|**startRow** +
+__optional__|integer (int32)
+|**total** +
+__optional__|integer (int64)
+|===
+
+
+[[_pmsbrand]]
+=== PmsBrand
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|Name|Description|Schema
+|**bigPic** +
+__optional__|专区大图|string
+|**brandStory** +
+__optional__|品牌故事|string
+|**factoryStatus** +
+__optional__|是否为品牌制造商：0-&gt;不是；1-&gt;是|integer (int32)
+|**firstLetter** +
+__optional__|首字母|string
+|**id** +
+__optional__||integer (int64)
+|**logo** +
+__optional__|品牌logo|string
+|**name** +
+__optional__||string
+|**productCommentCount** +
+__optional__|产品评论数量|integer (int32)
+|**productCount** +
+__optional__|产品数量|integer (int32)
+|**showStatus** +
+__optional__||integer (int32)
+|**sort** +
+__optional__||integer (int32)
+|===
+
+
+
+
+

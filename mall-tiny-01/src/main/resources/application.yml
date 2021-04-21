@@ -1,0 +1,21 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: tiny01
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mall?characterEncoding=utf-8&serverTimezone=UTC
+    username: root
+    password: root
+
+
+
+mybatis:
+  mapper-locations:
+    - classpath:mapper/*.xml
+#    classpath：只会到你的class路径中查找找文件;
+#    classpath*：不仅包含class路径，还包括jar文件中(class路径)进行查找
+    - classpath*:com/**/mapper/*.xml
